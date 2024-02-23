@@ -22,6 +22,7 @@ app.use(express.static(path.join(__dirname, "../../frontend/dist")))
 app.use("/api/auth", authRoutes)
 app.use("/api/users", userRoutes);
 
+app.set("trust proxy", 1);
 
 app.listen(7000,  ()=>{
     console.log("server is running on localhost:7000");
